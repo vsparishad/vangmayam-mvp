@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Sanskrit/Devanagari fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .font-devanagari {
+    font-family: 'Noto Sans Devanagari', serif;
+  }
+  
+  .font-tamil {
+    font-family: 'Noto Sans Tamil', serif;
+  }
+  
+  /* Sanskrit text styling */
+  .sanskrit-text {
+    font-family: 'Noto Sans Devanagari', serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    letter-spacing: 0.025em;
+  }
+  
+  /* Tamil text styling */
+  .tamil-text {
+    font-family: 'Noto Sans Tamil', serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    letter-spacing: 0.025em;
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-saffron-600 hover:bg-saffron-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .btn-outline {
+    @apply border border-saffron-600 text-saffron-600 hover:bg-saffron-600 hover:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:ring-offset-2;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Input styles */
+  .input-primary {
+    @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-saffron-500 focus:ring-saffron-500 sm:text-sm;
+  }
+  
+  /* Navigation styles */
+  .nav-link {
+    @apply text-gray-700 hover:text-saffron-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+  }
+  
+  .nav-link-active {
+    @apply nav-link text-saffron-600 bg-saffron-50;
+  }
+  
+  /* Search highlight */
+  .search-highlight {
+    @apply bg-yellow-200 px-1 rounded;
+  }
+  
+  /* Loading spinner */
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-gray-300 border-t-saffron-600;
+  }
+  
+  /* OCR confidence indicators */
+  .confidence-high {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .confidence-medium {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .confidence-low {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  /* Page viewer styles */
+  .page-viewer {
+    @apply relative bg-white border border-gray-300 rounded-lg overflow-hidden;
+  }
+  
+  .page-image {
+    @apply w-full h-auto object-contain;
+  }
+  
+  .ocr-overlay {
+    @apply absolute inset-0 pointer-events-none;
+  }
+  
+  .ocr-word {
+    @apply absolute border border-blue-300 bg-blue-100 bg-opacity-30 pointer-events-auto cursor-pointer;
+  }
+  
+  .ocr-word:hover {
+    @apply bg-blue-200 bg-opacity-50;
+  }
+  
+  /* Proofreading interface */
+  .proofread-panel {
+    @apply bg-gray-50 border-l border-gray-300 p-4;
+  }
+  
+  .text-editor {
+    @apply w-full h-64 p-3 border border-gray-300 rounded-lg focus:border-saffron-500 focus:ring-saffron-500 font-devanagari text-lg;
+  }
+  
+  /* Status badges */
+  .status-imported {
+    @apply bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-processing {
+    @apply bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-ocr-complete {
+    @apply bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-proofread {
+    @apply bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-published {
+    @apply bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-xs font-medium;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f3f4f6;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+  }
+  
+  /* Text selection */
+  .select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .print-break-before {
+      page-break-before: always;
+    }
+    
+    .print-break-after {
+      page-break-after: always;
+    }
+  }
+  
+  /* Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* Focus styles for keyboard navigation */
+  .focus-visible:focus {
+    outline: 2px solid #d97706;
+    outline-offset: 2px;
+  }
+}

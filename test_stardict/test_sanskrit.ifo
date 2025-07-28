@@ -1,0 +1,11 @@
+StarDict's dict ifo file
+version=2.4.2
+bookname=Test Sanskrit Dictionary
+wordcount=3
+idxfilesize=45
+author=Vangmayam Test
+email=test@vangmayam.org
+website=https://vangmayam.org
+description=Test Sanskrit dictionary for StarDict import functionality
+date=2025-07-28
+sametypesequence=m
