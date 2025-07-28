@@ -393,6 +393,11 @@ server {
     server_name $DOMAIN;
 
     # SSL configuration will be added by Certbot
+ssl_certificate /etc/letsencrypt/live/vaangmayam.vsparishad.in/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/vaangmayam.vsparishad.in/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
     
     # Security headers
     add_header X-Frame-Options "SAMEORIGIN" always;
